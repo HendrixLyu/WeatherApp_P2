@@ -8,6 +8,7 @@ const Wapper = styled.div`
     background-color: red;
     border-radius:50px;
     max-width:95%;
+    font-size:1.5rem;
   `
 
 function App() {
