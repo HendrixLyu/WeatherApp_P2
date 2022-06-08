@@ -1,6 +1,6 @@
 const openweathermapServiceAPI = require('../services/openweathermapServiceAPI')
 //GET ALL
-exports.index666 = async(req,res) => {
+exports.index666 = async(req, res) => {
     const result = await openweathermapServiceAPI.getWeather()
     const weatherList = result.data.list
     const noonList = weatherList.filter(e=>{
@@ -17,7 +17,7 @@ exports.store = (req,res) => {
 exports.update = (req,res) => {
 
 }
-
+// get one
 exports.show = (req,res) => {
 
 }

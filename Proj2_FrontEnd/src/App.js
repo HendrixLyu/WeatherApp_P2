@@ -3,11 +3,12 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import {getWeathers} from './apis/Weathers';
 import styled from 'styled-components';
+import Card from './components/card/card'
 
 const Wapper = styled.div`
     background-color: red;
     border-radius:50px;
-    max-width:95%;
+    max-width:90%;
     font-size:1.5rem;
   `
 
@@ -39,6 +40,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Card />
     </div>
   );
 }
