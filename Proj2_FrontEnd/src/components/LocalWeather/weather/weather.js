@@ -33,9 +33,9 @@ const Weather = () => {
     {/* ↑↑TempDisplay是个标准组件 */}
     <MainWeather>Rain</MainWeather>
     <Feelings>
-      <WeatherItem />
+      <WeatherItem title123="Humidity">75%</WeatherItem>
       <VerticalLine />
-      <WeatherItem />
+      <WeatherItem title123="Wind">11.83K/m</WeatherItem>
     </Feelings>
   </Wrapper> );
 };

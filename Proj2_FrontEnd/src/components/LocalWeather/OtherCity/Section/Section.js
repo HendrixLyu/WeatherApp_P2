@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   text-align: center;
-  /* padding: 0 48px; */
+  padding: 0 48px;
 `
 const Title = styled.div`
   margin-bottom:0.75rem;
   font-size: 1.5rem;
 `
 
-const WeatherItem = ({title123: Title111, children}) => {
+const Section = ({title123: Title111, children}) => {
   return ( 
   <Wrapper>
     <Title>{Title111}</Title>
@@ -17,4 +17,4 @@ const WeatherItem = ({title123: Title111, children}) => {
   </Wrapper> 
   );
 }
-export default WeatherItem;
+export default Section;

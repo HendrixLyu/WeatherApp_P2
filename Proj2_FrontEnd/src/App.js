@@ -5,6 +5,8 @@ import {getWeathers} from './apis/Weathers';
 import styled from 'styled-components';
 import LocalWeather from './components/LocalWeather/localWeather'
 import BackgroundImg from './components/BackgroundImg';
+import OtherCity from './components/LocalWeather/OtherCity/OtherCity';
+import Forecast from './components/Forecast';
 
 const Wrapper = styled(BackgroundImg)` //基于BackgroundImg的CSS组件
     /* background-image: url(https://wallpaperaccess.com/full/2629319.png);
@@ -19,7 +21,7 @@ const Wrapper = styled(BackgroundImg)` //基于BackgroundImg的CSS组件
 `
 const Container = styled.div`
   background-color: #fff;
-  width:807px;
+  /* width:807px; */
   border-radius:32px;
   box-shadow: 0 0 16px rgb(0 0 0 / 0.5);
   overflow:hidden;
@@ -50,11 +52,10 @@ function App() {
         </p> */}
         <Container>
           <LocalWeather />
-  
           <Layout>  
-            <div>OtherCity</div>
+            <OtherCity />
             <VerticalLine />
-            <div>DailyReport</div>
+            <Forecast />
           </Layout>
         </Container>
       </Wrapper>
