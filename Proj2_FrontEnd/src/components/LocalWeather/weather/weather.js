@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Temperature from '../../Temperature/Temperature';
 import WeatherItem from './weatherItem';
@@ -26,16 +27,18 @@ const VerticalLine = styled.div`
   width: 2px;
   margin: 0 2rem;
 `
-const Weather = () => {
+const Weather = ({
+  temp666, weather, humidity, wind
+}) => {
   return ( 
   <Wrapper>
-    <TempDisplay value='11.8' /> 
+    <TempDisplay value={temp666} /> 
     {/* ↑↑TempDisplay是个标准组件 */}
-    <MainWeather>Rain</MainWeather>
+    <MainWeather>{weather}</MainWeather>
     <Feelings>
-      <WeatherItem title123="Humidity">75%</WeatherItem>
+      <WeatherItem title123="Humidity">{humidity} %</WeatherItem>
       <VerticalLine />
-      <WeatherItem title123="Wind">11.83K/m</WeatherItem>
+      <WeatherItem title123="Wind">{wind} K/m</WeatherItem>
     </Feelings>
   </Wrapper> );
 };

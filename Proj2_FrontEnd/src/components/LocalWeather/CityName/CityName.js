@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   font-size: 2rem;
   color: #fff;
   &::after{
-    content:'';
+    content:' ↑ ';
     display:block;
     margin-top:0.5rem;
     height:3px;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     border-radius: 2px;
     width:50%;
     transform:translateX(50%);
-
+    opacity:0.7;
   }
 `
 const CityName = ({name666: myCity}) => {

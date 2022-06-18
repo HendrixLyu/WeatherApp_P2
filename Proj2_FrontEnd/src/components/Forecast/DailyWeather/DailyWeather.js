@@ -21,16 +21,16 @@ const StyledTemp = styled(Temperature)`
   font-size: 1.1rem;
   font-weight: bolder;
 `
-const DailtWeather = ({
-  date,weather,temperature
+const DailyWeather = ({
+  date,weather1,temperature
 }) => {
   return ( 
   <Wrapper>
     <div>{date}</div>
-    <StyledIcon iconValue={weather.icon} WeatherDescription={weather.description} />
+    <StyledIcon iconValue={weather1.icon} WeatherDescription={weather1.description} />
     <div><StyledTemp value={temperature} /></div>
   </Wrapper> 
   );
 }
 
-export default DailtWeather;
+export default DailyWeather;

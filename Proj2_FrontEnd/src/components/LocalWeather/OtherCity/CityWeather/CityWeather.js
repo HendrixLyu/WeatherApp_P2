@@ -23,14 +23,14 @@ const StyledIcon = styled(WeatherIcon)`
 `
 const CityWeather = (
   {
-    cityName:myCity,
+    cityName:my_City,
     temperature,
     weather,
   }
 ) => {
   return ( 
     <Wrapper>
-      <CityName>{myCity}</CityName>
+      <CityName>{my_City}</CityName>
       <TempStyle value={temperature} />
       <StyledIcon iconValue={weather.icon} WeatherDescription={weather.description} />
     </Wrapper>

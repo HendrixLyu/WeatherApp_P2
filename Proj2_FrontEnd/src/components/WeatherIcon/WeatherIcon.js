@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+
 
 const WeatherIcon = ({iconValue, WeatherDescription, className}) => {
   return (
