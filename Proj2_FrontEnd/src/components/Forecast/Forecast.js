@@ -20,7 +20,7 @@ const Forecast = () => {
   <Section title123="Everyday Forecast">
     <LayOut>
       {/* console.log({forecast.length}) */}
-      {forecast.map(({id,date, temp, dateWeather}) => (
+      {forecast.map(({id,  date, temp, dateWeather}) => (
         <DailyWeather key={id} date={date} temperature={temp} weather1={dateWeather} />
       ))}
       {/* <DailyWeather date="MON" temperature="21" weather1={{icon:'04d', description:'Cloudy'}} />

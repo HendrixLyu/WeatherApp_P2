@@ -27,9 +27,8 @@ const VerticalLine = styled.div`
   width: 2px;
   margin: 0 2rem;
 `
-const Weather = ({
-  temp666, weather, humidity, wind
-}) => {
+const Weather = (
+  { temp666, weather, humidity, wind} ) => {
   return ( 
   <Wrapper>
     <TempDisplay value={temp666} /> 
