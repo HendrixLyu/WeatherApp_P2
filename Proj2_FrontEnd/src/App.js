@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useEffect, useState } from 'react';
 import {getWeathers} from './apis/Weathers';
@@ -29,6 +29,10 @@ const Container = styled.div`
 const Layout = styled.div`
   display:flex;
   padding:36px 0;
+  
+  @media screen and (max-width:768px) {
+    flex-direction:column;
+  }
 `
 const VerticalLine = styled.div`
   width:3px;
@@ -36,13 +40,13 @@ const VerticalLine = styled.div`
 `
 
 function App() {
-  const [weatherList, setweatherList] = useState('')
-  useEffect(() => {
-    getWeathers().then((res) => {
-      setweatherList(res.data);
-      // console.log(res.data);
-    })
-  },[])
+  // const [weatherList, setweatherList] = useState('')
+  // useEffect(() => {
+  //   getWeathers().then((res) => {
+  //     setweatherList(res.data);
+  //     // console.log(res.data);
+  //   })
+  // },[])
 
   return (
     <div className="App">

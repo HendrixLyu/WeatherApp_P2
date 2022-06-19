@@ -8,7 +8,8 @@ import styled from 'styled-components';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App /> 
+    {/* 主入口 */}
   </React.StrictMode>
 );
 

@@ -9,6 +9,11 @@ const Layout = styled.div`
     display: flex;
     justify-content:space-between;
     padding: 64px 96px;
+    
+    @media screen and (max-width:768px) {
+        flex-direction:column;
+        justify-content:space-around;
+    }
 `
 const getTheWeather = (id) => axios.get('http://api.openweathermap.org/data/2.5/weather',{
     params:{
