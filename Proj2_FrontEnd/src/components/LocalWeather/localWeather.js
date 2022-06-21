@@ -34,10 +34,10 @@ const LocalWeather = () => {
     // Uncaught TypeError: Cannot read properties of undefined (reading 'main')错误，因为data666是异步操作
     useEffect(() => { //副效应,每渲染一次就执行一次
         // setLoading(true) //loading改为true
-        getTheWeather('2158177').then(({data: myData}) => {
-            setData(myData)
+        getTheWeather('2158177').then((ress) => {
+            setData(ress.data) //后端返回的数据都叫data
             setLoading(false)
-            console.log(myData)
+            // console.log(myData)
             console.log(loading)
             // setCityName(data.name)
             // setTemp(data.main.temp)
@@ -45,7 +45,7 @@ const LocalWeather = () => {
             // setWeather(data.weather[0].main)
             // setWind(data.wind.speed)
         })
-    }) //[]只渲染一次
+    },[]) //[]依赖为空的意义:只渲染一次
     if (loading) {
         return (
         <div> 
@@ -57,7 +57,7 @@ const LocalWeather = () => {
             <Layout>
                 <Weather 
                 temp666={data1.main.temp} 
-                weather={data1.main.weather} 
+                weather={data1.weather[0].main} 
                 humidity={data1.main.humidity} 
                 wind={data1.wind.speed}/>
                 <CityName name666={data1.name}/>
