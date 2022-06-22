@@ -15,7 +15,8 @@ const CityName = styled.div`
 `
 
 const TempStyle = styled(Temperature)`
-  width: 3rem;
+  width: 4rem;
+  margin-right:0.5rem;
 `
 const StyledIcon = styled(WeatherIcon)`
   height:50px;

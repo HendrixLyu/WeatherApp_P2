@@ -1,7 +1,7 @@
 
 import './App.css';
 import { useEffect, useState } from 'react';
-import {getWeathers} from './apis/Weathers';
+// import {getWeathers} from './apis/Weathers';
 import styled from 'styled-components';
 import LocalWeather from './components/LocalWeather/localWeather'
 import BackgroundImg from './components/BackgroundImg';
