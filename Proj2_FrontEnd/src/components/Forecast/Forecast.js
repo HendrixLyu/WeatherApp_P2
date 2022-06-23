@@ -1,48 +1,41 @@
 import styled from 'styled-components';
 import Section from '../LocalWeather/OtherCity/Section';
-
+import {getDay} from 'date-fns'
 import DailyWeather from './DailyWeather';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import getDailyForecast from '../../apis/getDailyForecast';
+import toDailyForecast from '../../utils/toDailyForecast';
 
 const LayOut = styled.div`
   margin-top:2rem;
   display: flex;
+  flex-direction:row;
 `
+const DATE = ['SUN','MON','TUE','WEN','THU','FRI','SAT']
 
-const Forecast = () => { 
-  const [forecast, setForecast] = useState([ 
-    { id:'01', date: "MON", temp: "21", dateWeather:{icon:'04d', description:'Cloudy'} },
-    { id:'02', date: "TUE", temp: "23", dateWeather:{icon:'01d', description:'Clear'} },
-    { id:'03', date: "WEN", temp: "20", dateWeather:{icon:'11d', description:'xxx..'} },
-    { id:'04', date: "THU", temp: "18", dateWeather:{icon:'10d', description:'xxxx...'} }
-  ])
+const Forecast = ({myCityID}) => {  
   const [data, setData] = useState()
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getDailyForecast('2158177').then(({data}) =>{
-      setData(data)
+    getDailyForecast(myCityID).then(({data}) =>{
+      setData(data) 
       setLoading(false)
     })
-  }, [])
+  }, [myCityID])
 
-  if (loading) {return (<><h1>还是因为异步</h1><h3>///Loading\\\</h3></>)};
-  console.log(data)
-
-  
+  if (loading) {return (<h2>/Loading\</h2>)};
+  // console.log(data.list)
+  // console.log(toDailyForecast(data.list, 5))
+  const DailyData = toDailyForecast(data.list, 5)
   return ( 
-  <Section title123="5-Days Forecast">
+  <Section title123="5-Day Forecast(Mid Night)">
     <LayOut>
-      {/* console.log({forecast.length}) */}
-      {data.list.map(({id, dt, main:{temp:temp}, weather=[weather]}) => (
-        <DailyWeather key={id} date={dt} temperature={temp} weather1={weather} />
+      {DailyData.map(({dt, main:{temp:temp111}, weather:weather666 }) => ( //weather是个[{}],list套obj结构
+        <DailyWeather key={dt} date={DATE[getDay(new Date(dt*1000))]} temperature={temp111} weather1={weather666} />
       ))}
-      {/* <DailyWeather date="MON" temperature="21" weather1={{icon:'04d', description:'Cloudy'}} />
-      <DailyWeather date="TUE" temperature="23" weather1={{icon:'01d', description:'Clear'}}/>
-      <DailyWeather date="WEN" temperature="20" weather1={{icon:'11d', description:'xxx..'}}/>
-      <DailyWeather date="THU" temperature="18" weather1={{icon:'10d', description:'xxxxx...'}}/> */}
+      
     </LayOut>
   </Section> 
 

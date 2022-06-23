@@ -27,7 +27,7 @@ const DailyWeather = ({
   return ( 
   <Wrapper>
     <div>{date}</div>
-    <StyledIcon iconValue={weather1[0].icon} WeatherDescription={weather1.description} />
+    <StyledIcon iconValue={weather1[0].icon} WeatherDescription={weather1[0].description} />
     <div><StyledTemp value={temperature} /></div>
   </Wrapper> 
   );

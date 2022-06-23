@@ -22,8 +22,8 @@ const Wrapper = styled(BackgroundImg)` //基于BackgroundImg的CSS组件
 const Container = styled.div`
   background-color: #fff;
   /* width:807px; */
-  border-radius:32px;
-  box-shadow: 0 0 16px rgb(0 0 0 / 0.5);
+  border-radius:45px;
+  box-shadow: 0 0 20px rgb(0 0 0 / 0.5);
   overflow:hidden;
 `
 const Layout = styled.div`
@@ -40,13 +40,8 @@ const VerticalLine = styled.div`
 `
 
 function App() {
-  // const [weatherList, setweatherList] = useState('')
-  // useEffect(() => {
-  //   getWeathers().then((res) => {
-  //     setweatherList(res.data);
-  //     // console.log(res.data);
-  //   })
-  // },[])
+  // city -> '2158177', '2147714', '2174003', '2063523'
+  const [switchCity, setSwitchCity] = useState(2147714)
 
   return (
     <div className="App">
@@ -55,11 +50,11 @@ function App() {
           {JSON.stringify(weatherList)}
         </p> */}
         <Container>
-          <LocalWeather />
+          <LocalWeather myCityID={switchCity}/>
           <Layout>  
-            <OtherCity />
+            <OtherCity myCityID={switchCity} setSwitchCity={setSwitchCity}/>
             <VerticalLine />
-            <Forecast />
+            <Forecast myCityID={switchCity}/>
           </Layout>
         </Container>
       </Wrapper>

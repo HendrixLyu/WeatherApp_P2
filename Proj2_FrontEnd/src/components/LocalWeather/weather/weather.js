@@ -6,9 +6,9 @@ import WeatherItem from './weatherItem';
 const Wrapper = styled.div`
   text-align: center;
 `
-const TempDisplay = styled(Temperature)` //往一个标准组件内的span并传入css
+const TempDisplay = styled(Temperature)` //往一个标准组件Temperature内的span并传入css
   color: #fff;
-  font-size: 5rem;
+  font-size: 4.5rem;
 ` 
 const MainWeather = styled.div`
   font-size: 1.5rem;
