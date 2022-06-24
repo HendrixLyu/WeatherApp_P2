@@ -2,6 +2,7 @@ const openweathermapServiceAPI = require('../services/openweathermapServiceAPI')
 //GET ALL
 exports.index666 = async(req, res) => {
     const result = await openweathermapServiceAPI.getWeather()
+    // console.log('####:',result)
     const weatherList = result.data.list
     const noonList = weatherList.filter(e=>{
         return e.dt_txt.includes('12:00:00')
