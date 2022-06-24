@@ -36,17 +36,18 @@ const StyledIcon = styled(WeatherIcon)`
 `
 const CityWeather = (
   { 
-    cityId,
+    cityId,//新的城市ID
     setSwitchCity,
-    cityName:my_City,
+    cityName: SelectedCity,
     temperature,
     weather,
   }
 ) => {
   return ( 
-    <WrapperButton onClick={() => setSwitchCity(cityId)}>
-      <CityName>{my_City}</CityName>
-      <TempStyle value={temperature} />
+    // ↓↓给button添加onClick()事件,更改App中switchCity值↓↓
+    <WrapperButton onClick={() => setSwitchCity(cityId)}> 
+      <CityName>{ SelectedCity }</CityName>
+      <TempStyle value={ temperature } />
       <StyledIcon iconValue={weather.icon} WeatherDescription={weather.description} />
     </WrapperButton>
   );

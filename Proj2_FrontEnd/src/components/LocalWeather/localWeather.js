@@ -31,10 +31,10 @@ const LocalWeather = ({myCityID}) => {
     // const [weather,setWeather] = useState('...Fetching...')
     // const [humidity,setHumidity] = useState('#加载中*#')
     // const [wind,setWind] = useState('~正在查!')
-    const [loading, setLoading] = useState(true) //初始值'false'
+    const [loading, setLoading] = useState(true) //初始值'true'
     // Uncaught TypeError: Cannot read properties of undefined (reading 'main')异步常见错误，因为data1是异步操作
     useEffect(() => { //副效应,每渲染一次就执行一次 //只有在渲染LocalWeather后执行
-        getOneWeather(myCityID).then((resss) => {
+        getOneWeather(myCityID).then((resss) => { //也可以直接解构response:{data}
             setData(resss.data) //服务器返回的res数据都叫data
             setLoading(false)
             // setCityName(resss.data.name)
@@ -43,15 +43,16 @@ const LocalWeather = ({myCityID}) => {
             // setWeather(resss.data.weather[0].main)
             // setWind(resss.data.wind.speed)
         })
-    }, [myCityID]) //[]依赖为空的意义:只渲染一次
+    }, [myCityID]) // [ ]依赖没变化一次，就重新渲染一次。依赖为空:只渲染一次
 
     if (loading) {return (<h1>...async req||Now Loading...</h1>)}; //异步请求时过场画面
     // console.log('>>>',data1)
     return ( 
         <BackgroundImg src='https://i.imgur.com/GhQZhaO.jpg' > 
             <Layout>
+                    {/* wind, main ,weather[0] ...均为api返回的字段 */}
                 <Weather 
-                temp666={data1.main.temp} 
+                temp666={data1.main.temp} //格式为:api返回数据格式
                 weather={data1.weather[0].main} 
                 humidity={data1.main.humidity} 
                 wind={data1.wind.speed} />

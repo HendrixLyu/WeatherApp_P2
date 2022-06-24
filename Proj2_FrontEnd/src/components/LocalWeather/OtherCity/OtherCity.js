@@ -17,8 +17,8 @@ const OtherCity = ({myCityID, setSwitchCity}) => {
 
   useEffect(() => {
     console.log(myCityID)
-    getWeathers(CityList.filter((item) => item !== myCityID)).then((res666) => {
-      setData(res666.data)
+    getWeathers(CityList.filter((item) => item !== myCityID)).then((res666) => { //筛选出除当前城市以外的城市List并传给getWeathers(ids)
+      setData(res666.data)//返回一个List
       steLoading(false)
     })
   }, [myCityID]) //myCityID改变就re-render
@@ -27,10 +27,11 @@ const OtherCity = ({myCityID, setSwitchCity}) => {
   // console.log(data)
   return ( <>{!loading &&
     <Section title123='Other City'>
-      {data.list.map(({id, name:myCity, main:{temp:mytemp}, weather:[weather]}) =>
+       {/* id, name ,main ,weather ...均为api返回的字段 */}
+      {data.list.map(({id, name:myCity, main:{temp:mytemp}, weather:[weather]}) => //[weather]是将api返回的weather结构,也有其他写法 见Forecast组件//
         <CityWeather key={id} cityId={id} setSwitchCity={setSwitchCity} cityName={myCity} temperature={mytemp} weather={weather} />
-      )}
-      
+      )} 
+      {/* ↑↑让cityId=新的城市↑↑ */}
       {/* <CityWeather key='xxx' cityName="Melbourne" temperature='12' weather={{icon:'04d', description:'Cloudy'}}/>
       <CityWeather cityName="Brisbane" temperature='21' weather={{icon:'01n', description:'clear'}}/>
       <CityWeather cityName="Sydney" temperature='17' weather={{icon:'11d', description:'ThunderStorm'}}/> */}

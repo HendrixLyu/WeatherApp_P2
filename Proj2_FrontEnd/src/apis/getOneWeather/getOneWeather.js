@@ -8,7 +8,8 @@ const getOneWeather = (id) => OpenWeatherMap.get666({
         id
     }
 })
-// 用OpenWeatherMap()代替 -->> // axios.get('http://api.openweathermap.org/data/2.5',{
+// 用OpenWeatherMap()代替 ↓↓↓ 
+// axios.get('http://api.openweathermap.org/data/2.5',{
 //         params:{
 //             id,
 //             units:'metric',
