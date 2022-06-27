@@ -26,11 +26,11 @@ const CityName = styled.div`
   margin-right: 0.5rem;
 `
 
-const TempStyle = styled(Temperature)`
+const TempStyle = styled(Temperature)` //将TempStyle作为className传入Temperature组件
   width: 4.5rem;
   margin-right:0.5rem;
 `
-const StyledIcon = styled(WeatherIcon)`
+const StyledIcon = styled(WeatherIcon)` //同上↑
   height:50px;
   width: 50px;
 `
@@ -45,7 +45,12 @@ const CityWeather = (
 ) => {
   return ( 
     // ↓↓给button添加onClick()事件,更改App中switchCity值↓↓
-    <WrapperButton onClick={() => setSwitchCity(cityId)}> 
+    <WrapperButton 
+      onClick = { (event) => {
+        event.preventDefault()
+        setSwitchCity(cityId)
+      } 
+    }> 
       <CityName>{ SelectedCity }</CityName>
       <TempStyle value={ temperature } />
       <StyledIcon iconValue={weather.icon} WeatherDescription={weather.description} />
