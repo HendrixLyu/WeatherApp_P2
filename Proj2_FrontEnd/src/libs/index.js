@@ -1,1 +1,1 @@
-export { default } from './OpenWeatherMap'
+export { default } from "./OpenWeatherMap";

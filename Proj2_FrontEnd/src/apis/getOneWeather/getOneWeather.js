@@ -1,14 +1,15 @@
-import axios from "axios"
-import OpenWeatherMap from "../../libs/OpenWeatherMap"
+import axios from "axios";
+import OpenWeatherMap from "../../libs/OpenWeatherMap";
 
-const getOneWeather = (id) => OpenWeatherMap.get666({
-    path:'/weather', //api路径
-    props123:{
-        // id:id, /可简写/
-        id
-    }
-})
-// 用OpenWeatherMap()代替 ↓↓↓ 
+const getOneWeather = id =>
+  OpenWeatherMap.get666({
+    path: "/weather", //api路径
+    props123: {
+      // id:id, /可简写/
+      id,
+    },
+  });
+// 用OpenWeatherMap()代替 ↓↓↓
 // axios.get('http://api.openweathermap.org/data/2.5',{
 //         params:{
 //             id,
@@ -17,5 +18,4 @@ const getOneWeather = (id) => OpenWeatherMap.get666({
 //         }
 //     })
 // }
-export default getOneWeather
-
+export default getOneWeather;

@@ -1,1 +1,1 @@
-export {default} from './weatherItem'
+export { default } from "./weatherItem";

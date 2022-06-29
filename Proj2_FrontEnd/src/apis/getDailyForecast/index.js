@@ -1,1 +1,1 @@
-export {default} from './getDailyForecast'
+export { default } from "./getDailyForecast";

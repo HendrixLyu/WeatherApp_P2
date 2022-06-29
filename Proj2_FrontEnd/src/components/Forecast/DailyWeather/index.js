@@ -1,1 +1,1 @@
-export {default} from './DailyWeather'
+export { default } from "./DailyWeather";
