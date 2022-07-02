@@ -37,7 +37,7 @@ const Forecast = ({ myCityID }) => {
         {/* dt, main ,weather ...均为api返回的字段 */}
         {DailyData.map(
           (
-            { dt, main: { temp: temp111 }, weather: weather666 } //weather是个[{...}, {...}],list套obj结构
+            { dt, main: { temp: temp111 }, weather: weather666 } //weather是个[{...}, {...}, {}..],list套obj结构
           ) => (
             <DailyWeather
               key={dt}

@@ -33,8 +33,8 @@ const LocalWeather = ({ myCityID }) => {
   // const [wind,setWind] = useState('~正在查~!')
   const [loading, setLoading] = useState(true); //初始值'true'
   // Uncaught TypeError: Cannot read properties of undefined (reading 'main')异步常见错误，因为data1是异步操作
-  useEffect(() => {
-    //副效应,每渲染一次就执行一次 //只有在渲染LocalWeather后执行
+  useEffect( () => {
+    //副效应,组件每渲染一次就执行一次 //只有在本组件LocalWeather渲染后执行,属于顺序操作!!!不属于异步操作!!!
     getOneWeather(myCityID).then(resss => {
       //也可以直接解构response:{data}
       setData(resss.data); //服务器返回的res数据都叫data
