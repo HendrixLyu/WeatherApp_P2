@@ -13,14 +13,14 @@ const OtherCity = ({ myCityID, setSwitchCity }) => {
   // ])
   const CityList = [2158177, 2147714, 2174003, 2063523];
   const [data, setData] = useState();
-  const [loading, steLoading] = useState(true); //loading动画
+  const [loading, setLoading] = useState(true); //loading动画
 
   useEffect(() => {
     console.log(myCityID);
     getWeathers(CityList.filter(item => item !== myCityID)).then(res666 => {
-      //筛选出除当前城市以外的城市List并传给getWeathers(ids)
-      setData(res666.data); //返回一个List
-      steLoading(false);
+      //筛选出除当前城市以外的城市List并传给getWeathers(ids) //返回一个List
+      setData(res666.data); 
+      setLoading(false);
     });
   }, [myCityID]); //myCityID改变就re-render
 

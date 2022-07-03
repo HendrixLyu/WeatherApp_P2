@@ -40,7 +40,7 @@ const VerticalLine = styled.div`
 `;
 
 function App() {
-  // city -> '2158177', '2147714', '2174003', '2063523'
+  // 四个city的ID -> '2158177', '2147714', '2174003', '2063523'//
   const [switchCity, setSwitchCity] = useState(2147714);
 
   return (
