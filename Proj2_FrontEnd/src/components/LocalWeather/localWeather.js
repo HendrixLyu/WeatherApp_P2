@@ -25,7 +25,7 @@ const Layout = styled.div`
 // }) //作为function: getOneWeather()提出
 
 const LocalWeather = ({ myCityID }) => {
-  const [data1, setData] = useState(); //每一个state发生变化,就重新渲染一次
+  const [data1, setData] = useState(); //每一个state发生变化,就重新渲染一次, 每当组件的 state 或 props 发生变化时，组件就会重新渲染。当实体DOM发现没变化时就停止重新渲染
   // const [city, setCityName] = useState('@ Didn't get @')
   // const [temp,setTemp] = useState('_=_未获取_=_')
   // const [weather,setWeather] = useState('...Fetching...')
